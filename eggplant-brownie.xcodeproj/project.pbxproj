@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D85E8D82267C06D00A5E624 /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D85E8D72267C06D00A5E624 /* RefeicoesTableViewController.swift */; };
+		8D85E8D82267C06D00A5E624 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D85E8D72267C06D00A5E624 /* MealsTableViewController.swift */; };
 		B90829C72221AF9600EA37C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90829C62221AF9600EA37C8 /* AppDelegate.swift */; };
 		B90829C92221AF9600EA37C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90829C82221AF9600EA37C8 /* ViewController.swift */; };
 		B90829CC2221AF9600EA37C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90829CA2221AF9600EA37C8 /* Main.storyboard */; };
 		B90829CE2221AF9700EA37C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90829CD2221AF9700EA37C8 /* Assets.xcassets */; };
 		B90829D12221AF9700EA37C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90829CF2221AF9700EA37C8 /* LaunchScreen.storyboard */; };
-		B9EFBAE8223D76FA00B773B2 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EFBAE7223D76FA00B773B2 /* Refeicao.swift */; };
+		B9EFBAE8223D76FA00B773B2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EFBAE7223D76FA00B773B2 /* Meal.swift */; };
 		B9EFBAEA223D775300B773B2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EFBAE9223D775300B773B2 /* Item.swift */; };
+		D71F82B82684E3CC001AF788 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F82B62684E3CC001AF788 /* AddItemsViewController.swift */; };
+		D71F82B92684E3CC001AF788 /* AddItensViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71F82B72684E3CC001AF788 /* AddItensViewController.xib */; };
+		D71F82E0268E0170001AF788 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F82DF268E0170001AF788 /* Alert.swift */; };
+		D71F82E426937172001AF788 /* RemoveMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F82E326937172001AF788 /* RemoveMealViewController.swift */; };
+		D71F82E6269486E5001AF788 /* MealDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F82E5269486E4001AF788 /* MealDao.swift */; };
+		D71F82E82694949D001AF788 /* ItemDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F82E72694949D001AF788 /* ItemDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8D85E8D72267C06D00A5E624 /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
+		8D85E8D72267C06D00A5E624 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 		B90829C32221AF9600EA37C8 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90829C62221AF9600EA37C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B90829C82221AF9600EA37C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,9 +32,15 @@
 		B90829CD2221AF9700EA37C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B90829D02221AF9700EA37C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B90829D22221AF9700EA37C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9EFBAE7223D76FA00B773B2 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
+		B9EFBAE7223D76FA00B773B2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		B9EFBAE9223D775300B773B2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B9F1CCDB223408A80037DEFB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D71F82B62684E3CC001AF788 /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		D71F82B72684E3CC001AF788 /* AddItensViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItensViewController.xib; sourceTree = "<group>"; };
+		D71F82DF268E0170001AF788 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D71F82E326937172001AF788 /* RemoveMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveMealViewController.swift; sourceTree = "<group>"; };
+		D71F82E5269486E4001AF788 /* MealDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDao.swift; sourceTree = "<group>"; };
+		D71F82E72694949D001AF788 /* ItemDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +88,11 @@
 		B9EFBAEB223D77E900B773B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B9EFBAE7223D76FA00B773B2 /* Refeicao.swift */,
+				B9EFBAE7223D76FA00B773B2 /* Meal.swift */,
 				B9EFBAE9223D775300B773B2 /* Item.swift */,
+				D71F82DF268E0170001AF788 /* Alert.swift */,
+				D71F82E5269486E4001AF788 /* MealDao.swift */,
+				D71F82E72694949D001AF788 /* ItemDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -86,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				B90829C82221AF9600EA37C8 /* ViewController.swift */,
-				8D85E8D72267C06D00A5E624 /* RefeicoesTableViewController.swift */,
+				8D85E8D72267C06D00A5E624 /* MealsTableViewController.swift */,
+				D71F82B62684E3CC001AF788 /* AddItemsViewController.swift */,
+				D71F82E326937172001AF788 /* RemoveMealViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -95,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B90829CA2221AF9600EA37C8 /* Main.storyboard */,
+				D71F82B72684E3CC001AF788 /* AddItensViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +177,7 @@
 			files = (
 				B90829D12221AF9700EA37C8 /* LaunchScreen.storyboard in Resources */,
 				B90829CE2221AF9700EA37C8 /* Assets.xcassets in Resources */,
+				D71F82B92684E3CC001AF788 /* AddItensViewController.xib in Resources */,
 				B90829CC2221AF9600EA37C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,9 +191,14 @@
 			files = (
 				B9EFBAEA223D775300B773B2 /* Item.swift in Sources */,
 				B90829C92221AF9600EA37C8 /* ViewController.swift in Sources */,
-				8D85E8D82267C06D00A5E624 /* RefeicoesTableViewController.swift in Sources */,
-				B9EFBAE8223D76FA00B773B2 /* Refeicao.swift in Sources */,
+				8D85E8D82267C06D00A5E624 /* MealsTableViewController.swift in Sources */,
+				B9EFBAE8223D76FA00B773B2 /* Meal.swift in Sources */,
+				D71F82B82684E3CC001AF788 /* AddItemsViewController.swift in Sources */,
+				D71F82E82694949D001AF788 /* ItemDao.swift in Sources */,
+				D71F82E426937172001AF788 /* RemoveMealViewController.swift in Sources */,
 				B90829C72221AF9600EA37C8 /* AppDelegate.swift in Sources */,
+				D71F82E0268E0170001AF788 /* Alert.swift in Sources */,
+				D71F82E6269486E5001AF788 /* MealDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

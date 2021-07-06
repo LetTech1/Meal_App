@@ -2,34 +2,115 @@
 import UIKit
 
 protocol AdicionaRefeicaoDelegate {
-    func adicionar(refeicao: Refeicao)
+    func add(meal: Meal)
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddItemsDelegate {
     
-    @IBOutlet var nomeTextField: UITextField?
-    @IBOutlet weak var felicidadeTextField: UITextField?
-
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var itemsTableView: UITableView!
+    
+    // MARK: - Atributos
+    
     var delegate: AdicionaRefeicaoDelegate?
+    var items: [Item] = []
+    var selectedItem: [Item] = []
     
-    @IBAction func adicionar(_ sender: Any) {
+    // MARK: - IBOutlets
+    
+    @IBOutlet var nameTextField: UITextField?
+    @IBOutlet weak var happinessTextField: UITextField?
+    
+    // MARK: - View life cycle
+    
+    override func viewDidLoad() {
+        let buttonAddItem = UIBarButtonItem(title: "Adicionar", style: .plain, target: self, action: #selector(addItems))
+        navigationItem.rightBarButtonItem = buttonAddItem
+        recoverItem()
+    }
+    
+    func recoverItem(){
+        items = ItemDao().recover()
+    }
+    
+    @objc func addItems(){
+        let addItemsViewController = AddItemsViewController(delegate: self)
+        navigationController?.pushViewController(addItemsViewController, animated: true)
+    }
+    
+    func add(_ item: Item) {
+        items.append(item)
+        ItemDao().save(items)
+        if let tableView = itemsTableView{
+            tableView.reloadData()
+        }else {
+            Alert(controller: self).show(message: "Não foi possível atualizar a tabela")
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            
+        let tableRow = indexPath.row
+        let item = items[tableRow]
         
+        cell.textLabel?.text = item.name
         
-        guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+        return cell
+    }
+    
+    // MARK - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        if cell.accessoryType == .none{
+            cell.accessoryType = .checkmark
+            let tableRow = indexPath.row
+            selectedItem.append(items[tableRow])
+        } else{
+            cell.accessoryType = .none
+            
+            let item = items[indexPath.row]
+            if let position = selectedItem.index(of: item){
+                selectedItem.remove(at: position)
+                
+            }
         }
         
-        guard let felicidadeDaRefeicao = felicidadeTextField?.text, let felicidade = Int(felicidadeDaRefeicao) else {
-            return
+    }
+    
+    func retrieveFormMeal() -> Meal?{
+        guard let nameOfTheMeal = nameTextField?.text else {
+            return nil
         }
         
-        let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade)
+        guard let happinessOfTheMeal = happinessTextField?.text, let happiness = Int(happinessOfTheMeal) else {
+            return nil
+        }
         
-        print("comi \(refeicao.nome) e fiquei com felicidade: \(refeicao.felicidade)")
+        let meal = Meal(name: nameOfTheMeal, happiness: happiness, items: selectedItem)
+        
+        return meal
+    }
 
-        delegate?.adicionar(refeicao: refeicao)
-
-        navigationController?.popViewController(animated: true)
+    // MARK: - IBActions
+    
+    @IBAction func add(_ sender: Any) {
+        if let meal = retrieveFormMeal(){
+            delegate?.add(meal: meal)
+            navigationController?.popViewController(animated: true)
+        } else{
+            Alert(controller: self).show(message: "Erro ao ler dados do formulário")
+        }
     }
 }
 
